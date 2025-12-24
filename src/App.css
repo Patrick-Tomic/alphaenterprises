@@ -11,6 +11,12 @@
 }
 nav{
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+   top:0;
+   position: sticky;
+   z-index: 50;;
+}
+#service{
+  border-radius: 25%;
 }
 a{
   text-decoration: none;
@@ -27,4 +33,20 @@ h1{
 p{
   font-family: 'Share Tech', sans-serif;
   
+}
+label{
+  font-size:20px;
+}
+input{
+  width: 30vw;
+}
+textarea{
+  width: 40vw;
+  height: 20vh;
+}
+
+#submitBtn{
+  width: 20vw;
+  height: 5vh;
+  border-radius: 15px;
 }
