@@ -15,9 +15,7 @@ nav{
    position: sticky;
    z-index: 50;;
 }
-#service{
-  border-radius: 25%;
-}
+ 
 a{
   text-decoration: none;
   color: black;
@@ -49,4 +47,17 @@ textarea{
   width: 20vw;
   height: 5vh;
   border-radius: 15px;
+}
+li{
+  list-style-type:none;
+}
+#service{
+border-radius: 16px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+#serviceTag{
+  font-size:30px;
+}
+#serviceTag:hover{
+  color:white;
 }

@@ -3,66 +3,80 @@ import './App.css'
 import logo from './assets/Alpha (2).png'
 import Hero from './assets/hero.jpg'
 import workArea from './assets/workarea.png'
-import MakeService from './components/makeService'
+ 
 import lighting from './assets/service.jpg'
 function App() {
   const [count, setCount] = useState(0)
- 
+
   const services = [
     {
       service:"Permanent Outdoor Lighting",
+      header:'Permanent Lighting That Elevates Your Home',
       description:"Upgrade your property with sleek, permanent outdoor lighting that looks great every night of the year. Our energy-efficient, app-controlled systems let you change colors and brightness instantly for everyday lighting or special occasions. Enjoy increased curb appeal, security, and zero seasonal setup.",
       image: lighting
     },
      {
       service:"Christmas Lights",
+      header:'Holiday Lighting, Professionally Installed',
       description:"Make your home or business shine this holiday season with professional Christmas light installation. We handle the design, installation, and takedown, so you can enjoy a festive display without the stress. Clean lines, bright lights, and hassle-free service guaranteed.",
       image: ''
     },
      {
       service:"Gutter Cleaning",
+      header:'Prevent Water Damage With Clean Gutters',
       description:"Protect your home from water damage with professional gutter cleaning. We remove leaves, debris, and buildup to keep water flowing properly and prevent costly repairs. Safe, thorough, and done right the first time.",
       image: ''
     },
      {
       service:"Gutter Screen Installation",
+      header:'Stop Clogs Before They Start',
       description:"Keep leaves and debris out while water flows freely with professionally installed gutter screens. Our durable systems reduce clogs, maintenance, and overflow, helping protect your roof and foundation. A smart, long-term solution for hassle-free gutters.",
       image: ''
     },
      {
       service:"Downspout Repair",
+      header:'Proper Drainage Starts at the Downspout',
       description:"Ensure proper drainage with reliable downspout repair and replacement. We fix leaks, blockages, and poor water flow to direct rainwater safely away from your home. Prevent foundation damage and keep your gutters working efficiently.",
       image: ''
     },
      {
       service:"Window Cleaning",
+      header:'Clear Windows. Brighter Home.',
       description:"Enjoy crystal-clear windows with professional window cleaning services. We safely remove dirt, streaks, and buildup to brighten your home or business. Clean windows that enhance your view and boost curb appeal.",
       image: ''
     },
      {
       service:"Pool Cage Rescreening",
+      header:'Keep Bugs Out. Keep the Breeze In.',
       description:"Restore your pool enclosure with professional rescreening services. We replace damaged or torn screens to keep insects out while maintaining airflow and visibility. Durable materials, clean workmanship, and a refreshed look for your pool area.",
       image: ''
     },
      {
       service:"Soffit and Fascia Board Repair",
+      header:'Stop Water Damage at the Roof Edge',
       description:"Protect your roofline with professional soffit and fascia board repair. We fix rot, damage, and wear to prevent moisture intrusion and pest issues. Strong, clean repairs that restore both function and curb appeal.",
       image: ''
     }
   ]
+  
+   const [header,setHeader] = useState(services[0].header)
+ const [description, setDescription] = useState(services[0].description)
       useEffect(() => {
-      
-      }, [])
-    const children: any = services.forEach((service) => {
-      console.log(service)
-      return(
-      <MakeService service={service.service} description={service.description} image={service.image}></MakeService>
-      )
-    }
+        let count = 1
 
-        
-          )
-      console.log(children)
+        setInterval(() => {
+          if(count > 7) {
+            count = 0
+          }
+          setDescription(services[count].description)
+          setHeader(services[count].header)
+
+          count++
+        }, 10000)
+
+
+
+      }, [])
   return (
     <>
     <nav className=' flex bg-[#FFFFFF] justify-around items-center sticky h-[10vh] top-0 z-50'>
@@ -108,14 +122,35 @@ function App() {
           brings professionalism and a personal touch to every project—big or small.
       </p>
    </div>
-   <img src={workArea} alt="" />
+   <img className='w-[35vw]' src={workArea} alt="" />
     </div>
-    <div id='services' className='bg-[#1B3F73] h-screen'>
-    <h1>
+    <div id='services' className='bg-[#2866BA] h-screen flex items-center justify-around'>
+   
+    <div >
+ 
+    <div id="service" className="flex bg-[#EAF0F6] flex-col w-[40vw] h-[75vh] border-2 justify-center items-center">
+        <h1>
+            {header}
+        </h1>
+        <p className="text-[24px] p-[5vw]">
+            {description}
+        </p>
+    </div>
+    </div>
+    <div className='flex flex-col'>
+       <h1>
       Our Services
     </h1>
-    <div className='flex justify-around'>
-  <MakeService service={services[0].service} description={services[0].description} image={services[0].image}></MakeService>
+    <ul className=' h-[60vh] flex flex-col justify-around text-[20px]'>
+        <li> <a id='serviceTag' href="#a">Permanent Outdoor Lighting</a></li>
+        <li> <a id='serviceTag' href="#b">Christmas Lights</a></li>
+        <li> <a id='serviceTag' href="#c">Gutter Cleaning</a></li>
+        <li> <a id='serviceTag' href="#d">Gutter Screening Installation</a></li>
+        <li> <a id='serviceTag' href="#e">Downspout Repair</a></li>
+        <li> <a id='serviceTag' href="#f">Window Cleaning</a></li>
+        <li> <a id='serviceTag' href="#g">Pool Cage Rescreening</a></li>
+        <li> <a id='serviceTag' href="#h">Soffit and Fascia Board Repair</a></li>
+        </ul>
     </div>
     </div>
     <div className='flex flex-col justify-around items-center' id='formDiv'>
