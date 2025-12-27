@@ -6,7 +6,7 @@ import workArea from './assets/workarea.png'
  
 import lighting from './assets/service.jpg'
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   const services = [
     {
