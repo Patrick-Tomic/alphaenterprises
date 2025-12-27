@@ -4,6 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html{
+  scroll-behavior: smooth;
+}
 
 *{
   margin:0;
@@ -55,9 +58,25 @@ li{
 border-radius: 16px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-#serviceTag{
+li{
   font-size:30px;
+    font-family: "Jaro", sans-serif;
 }
-#serviceTag:hover{
+li:hover{
+  cursor:pointer;
   color:white;
+}
+label{
+      font-family: "Jaro", sans-serif;
+}
+input{
+  font-size: 20px;
+}
+#formContainer{
+  border-radius: 20px;
+  margin:100px 100px;
+  padding: 50px 50px;
+}
+#quoteTag{
+  font-size: 50px;
 }

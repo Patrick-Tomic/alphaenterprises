@@ -58,13 +58,16 @@ function App() {
       image: ''
     }
   ]
-  
+  let timer = 10000
    const [header,setHeader] = useState(services[0].header)
  const [description, setDescription] = useState(services[0].description)
+
+
+
+ 
       useEffect(() => {
         let count = 1
-
-        setInterval(() => {
+         setInterval(() => {
           if(count > 7) {
             count = 0
           }
@@ -72,23 +75,30 @@ function App() {
           setHeader(services[count].header)
 
           count++
-        }, 10000)
-
-
-
+        }, timer)
       }, [])
+       const listItems:any = services.map((service) => {
+    return( 
+      <li onClick={() => {
+       setDescription(service.description)
+       setHeader(service.header)
+       timer = 15000
+      }}>
+        {service.service}
+      </li>
+    )
+  })
   return (
     <>
     <nav className=' flex bg-[#FFFFFF] justify-around items-center sticky h-[10vh] top-0 z-50'>
-      <img
+     <a href="#top"> <img
       className='w-[5vw]'
        src={logo} 
        alt=""
-        />
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Process</a>
-        <a href="#">Contact Us</a>
+        /></a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
        
     </nav>
     <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-center h-screen'>
@@ -100,7 +110,7 @@ function App() {
      <h1 className='w-[25vw] text-[#FFFFFF]'>
         Brighten, Protect, and Upgrade Your Home Across Tampa Bay
         </h1>
-         <a className='' href="#">Get A Free Quote</a>
+         <a id='quoteTag' className='' href="#">Get A Free Quote</a>
          </div>
     </div>
     <div className='flex h-screen justify-around items-center p-[50px]' id='about'>
@@ -142,39 +152,44 @@ function App() {
       Our Services
     </h1>
     <ul className=' h-[60vh] flex flex-col justify-around text-[20px]'>
-        <li> <a id='serviceTag' href="#a">Permanent Outdoor Lighting</a></li>
-        <li> <a id='serviceTag' href="#b">Christmas Lights</a></li>
-        <li> <a id='serviceTag' href="#c">Gutter Cleaning</a></li>
-        <li> <a id='serviceTag' href="#d">Gutter Screening Installation</a></li>
-        <li> <a id='serviceTag' href="#e">Downspout Repair</a></li>
-        <li> <a id='serviceTag' href="#f">Window Cleaning</a></li>
-        <li> <a id='serviceTag' href="#g">Pool Cage Rescreening</a></li>
-        <li> <a id='serviceTag' href="#h">Soffit and Fascia Board Repair</a></li>
+      {listItems}
         </ul>
     </div>
     </div>
-    <div className='flex flex-col justify-around items-center' id='formDiv'>
-    <h1>
+    <div className='flex flex-col justify-around items-center bg-[#122A4A]' id='formDiv'>
+  
+<div id='formContainer' className='border-2 bg-[#ffffff] flex flex-col items-center'>
+     <h1 className='self-center'>
       Contact Us
     </h1>
-    <form className='flex flex-col justify-around w-[50vw]' action="">
-        <label htmlFor="firstName">First Name:  </label>
-        <input name='firstName' type="text" />
+    <form className='flex flex-col justify-around w-[50vw] ml-[100px] ' action="https://formspree.io/f/xbdjdzpj" method='POST'>   
+         
+        <label id='firstLabel' htmlFor="firstName">First Name:  </label>
+        <input id='firstName' name='firstName' type="text" required />
 
         <label htmlFor="lastName">Last Name:</label>
-        <input type="text" name="lastName" id="" />
+        <input id='lastName' type="text" name="lastName" required />
 
         <label htmlFor="email">Email:</label>
-        <input type="email" name='email' />
+        <input id='email' type="email" name='email' required />
 
-        <label htmlFor="body"> Reach Out!</label>
-        <textarea name="body" id="formBody">
+        <label htmlFor="body"> Message Us Today!</label>
+        <textarea  name="body" id="formBody" required>
 
         </textarea>
-        <button id='submitBtn' type='submit'>
+        <button id='submitBtn' onClick={() => {
+          const firstName: any = document.getElementById('firstName')
+          const lastName = document.getElementById('lastName')
+          const email: any = document.getElementById('email')
+          
+         if(document.querySelector('textarea')?.value.length != 10){
+          console.log('hit')
+         }
+        }}>
           Enter
         </button>
     </form>
+    </div>
     </div>
     <footer>
 
