@@ -54,15 +54,14 @@ textarea{
   height: 5vh;
   border-radius: 15px;
 }
-li{
-  list-style-type:none;
-}
+ 
 #service{
 border-radius: 16px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 li{
   font-size:30px;
+   list-style-type:none;
     font-family: "Jaro", sans-serif;
 }
 li:hover{
@@ -110,7 +109,7 @@ input{
   }
   #about{
     height: 200vh;
-    border: 2px solid black;
+    
     flex-direction: column;
   }
   
@@ -126,5 +125,16 @@ input{
   }
   li{
     font-size: 15px;
+  }
+  #service{
+    width: 60vw;
+  }
+  #serviceHeader{
+    width: 100%;
+    margin-left: 4vw;
+    font-size: 30px;
+  }
+  #serviceDesc{
+    font-size: 22px;
   }
 }

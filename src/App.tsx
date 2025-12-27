@@ -135,10 +135,10 @@ function App() {
     <div >
  
     <div id="service" className="flex bg-[#EAF0F6] flex-col w-[40vw] h-[75vh] border-2 justify-center items-center">
-        <h1>
+        <h1 id='serviceHeader'>
             {header}
         </h1>
-        <p className="text-[24px] p-[5vw]">
+        <p id='serviceDesc' className="text-[24px] p-[5vw]">
             {description}
         </p>
     </div>
