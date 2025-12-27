@@ -62,9 +62,6 @@ function App() {
    const [header,setHeader] = useState(services[0].header)
  const [description, setDescription] = useState(services[0].description)
 
-
-
- 
       useEffect(() => {
         let count = 1
          setInterval(() => {
@@ -73,7 +70,6 @@ function App() {
           }
           setDescription(services[count].description)
           setHeader(services[count].header)
-
           count++
         }, timer)
       }, [])
@@ -102,23 +98,23 @@ function App() {
        
     </nav>
     <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-center h-screen'>
-      <img 
+      <img id='heroImg'
       className='w-[30vw] rounded-[25px] '
       src={Hero}
       alt="Lighting Services in Tampa Area" />
       <div className='flex flex-col justify-around h-full items-center'>
-     <h1 className='w-[25vw] text-[#FFFFFF]'>
+     <h1 id='heroTag' className='w-[25vw] text-[#FFFFFF]'>
         Brighten, Protect, and Upgrade Your Home Across Tampa Bay
         </h1>
-         <a id='quoteTag' className='' href="#">Get A Free Quote</a>
+         <a id='quoteTag' className='text-[#ffffff]' href="#">Get A Free Quote</a>
          </div>
     </div>
     <div className='flex h-screen justify-around items-center p-[50px]' id='about'>
       <div className='flex flex-col items-center justify-around'>
-         <h1>
+         <h1 id='aboutHeader'>
         About Us
       </h1>
-      <p className=' w-[50vw] text-[28px] '>
+      <p id='aboutP' className=' w-[50vw] text-[28px] '>
         At Alpha Enterprises, we provide reliable, professional handyman and outdoor 
         services across a wide area—from St. Pete and Apollo Beach in the south to Spring 
         Hill and Brooksville in the north, and as far east as Zephyrhills and Plant City.<br></br><br></br>
@@ -132,7 +128,7 @@ function App() {
           brings professionalism and a personal touch to every project—big or small.
       </p>
    </div>
-   <img className='w-[35vw]' src={workArea} alt="" />
+   <img id='workArea' className='w-[35vw]' src={workArea} alt="" />
     </div>
     <div id='services' className='bg-[#2866BA] h-screen flex items-center justify-around'>
    
@@ -156,7 +152,7 @@ function App() {
         </ul>
     </div>
     </div>
-    <div className='flex flex-col justify-around items-center bg-[#122A4A]' id='formDiv'>
+    <div className='flex flex-col justify-around h-screen items-center bg-[#122A4A]' id='contact'>
   
 <div id='formContainer' className='border-2 bg-[#ffffff] flex flex-col items-center'>
      <h1 className='self-center'>
@@ -173,27 +169,19 @@ function App() {
         <label htmlFor="email">Email:</label>
         <input id='email' type="email" name='email' required />
 
+        <label htmlFor="phone">Phone Number</label>
+        <input type='tel ' required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  name='phone'  placeholder='***-***-****' />
         <label htmlFor="body"> Message Us Today!</label>
-        <textarea  name="body" id="formBody" required>
-
-        </textarea>
-        <button id='submitBtn' onClick={() => {
-          const firstName: any = document.getElementById('firstName')
-          const lastName = document.getElementById('lastName')
-          const email: any = document.getElementById('email')
+        <textarea  name="body" id="formBody" minLength={20} maxLength={300} required>
           
-         if(document.querySelector('textarea')?.value.length != 10){
-          console.log('hit')
-         }
-        }}>
+        </textarea>
+        <button  id='submitBtn'>
           Enter
         </button>
     </form>
+    
     </div>
     </div>
-    <footer>
-
-    </footer>
     </>
   )}
 
