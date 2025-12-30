@@ -90,8 +90,50 @@ input{
 
 }
 #submitBtn{
-  background: #000;
-  color:white;
+ display: inline-flex;
+ align-items:center;
+ justify-content: center;
+ padding: 14px 28px;
+ min-width: 180px;
+ font-size:1rem;
+ font-weight: 600;
+margin: 20px 20px;
+ letter-spacing: 0.3px;
+ color: #ffffff;
+ background: linear-gradient(135deg, #1B3F73, #16335d);
+ border: none;
+ border-radius: 12px;
+ cursor: pointer;
+ transition: 
+ transform 0.15s ease,
+ box-shadow 0.15s ease,
+ background 0.15s ease;
+
+ box-shadow: 0 6px 16px rgba(27,63, 115, 0.25);
+
+}
+#submitBtn:hover {
+  transform: translateY(-2px);
+  color: #122A4A;
+  box-shadow:
+    0 10px 24px rgba(27, 63, 115, 0.35);
+  background: linear-gradient(135deg, #204b8a, #1b3f73);
+}
+
+#submitBtn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 12px rgba(27, 63, 115, 0.25);
+}
+
+#submitBtn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(27, 63, 115, 0.35),
+    0 6px 16px rgba(27, 63, 115, 0.25);
+}
+#submitBtn:hover{
+  background: rgba(27, 63, 115, 0.08);
 }
 @media(max-width:600px){
   
@@ -136,5 +178,8 @@ input{
   }
   #serviceDesc{
     font-size: 22px;
+  }
+  form{
+    margin-left: 0;
   }
 }

@@ -3,11 +3,12 @@ import './App.css'
 import logo from './assets/Alpha (2).png'
 import Hero from './assets/hero.jpg'
 import workArea from './assets/workarea.png'
- 
+import cleanGutter from './assets/cleanGutter.jpg'
+import dirrtyGutter from './assets/dirtyGutter.jpg'
 import lighting from './assets/service.jpg'
+import lightingB from './assets/lightingB.png'
+import lightingC from './assets/lightingC.png'
 function App() {
- 
-
   const services = [
     {
       service:"Permanent Outdoor Lighting",
@@ -58,12 +59,23 @@ function App() {
       image: ''
     }
   ]
+  const imgs = [Hero,lightingB, lightingC ]
   let timer = 10000
    const [header,setHeader] = useState(services[0].header)
  const [description, setDescription] = useState(services[0].description)
-
+ const [heroImg, setImg] = useState(lighting)
       useEffect(() => {
-        let count = 1
+
+        let count = 0 
+        setInterval(() => {
+          if(count === 2) {
+            count = 0
+          }
+          setImg(imgs[count])
+          count++
+
+        }, 10000)
+        /*let count = 1
          setInterval(() => {
           if(count > 7) {
             count = 0
@@ -72,6 +84,7 @@ function App() {
           setHeader(services[count].header)
           count++
         }, timer)
+        */
       }, [])
        const listItems:any = services.map((service) => {
     return( 
@@ -95,12 +108,11 @@ function App() {
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact Us</a>
-       
     </nav>
     <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-center h-screen'>
       <img id='heroImg'
       className='w-[30vw] rounded-[25px] '
-      src={Hero}
+      src={heroImg}
       alt="Lighting Services in Tampa Area" />
       <div className='flex flex-col justify-around h-full items-center'>
      <h1 id='heroTag' className='w-[25vw] text-[#FFFFFF]'>
@@ -115,17 +127,17 @@ function App() {
         About Us
       </h1>
       <p id='aboutP' className=' w-[50vw] text-[28px] '>
-        At Alpha Enterprises, we provide reliable, professional handyman and outdoor 
-        services across a wide area—from St. Pete and Apollo Beach in the south to Spring 
-        Hill and Brooksville in the north, and as far east as Zephyrhills and Plant City.<br></br><br></br>
+        At Alpha Enterprises, we provide dependable, high-quality handyman and outdoor
+         home services throughout the greater Tampa Bay region. Our service area extends
+          from Brooksville in the north to St. Petersburg in the south, reaching east to Plant City.<br></br> <br></br>
 
-        Specializing in light installations, we’re best known for creating festive, eye-catching
-         Christmas light displays, while also offering permanent outdoor lighting to enhance homes
-          year-round. Beyond lighting, our team handles gutter repair, screen repair and installation, 
-          and a variety of handyman services to keep your home in top shape.<br></br><br></br>
-
+          We specialize in both seasonal and permanent outdoor lighting solutions. Known for our vibrant and expertly designed Christmas light displays, 
+          we also offer long-lasting, energy-efficient permanent lighting installations to elevate and illuminate homes year-round. In addition to lighting,
+          our skilled team provides gutter repair, screen installation and repair and a comprehensive range of professional handyman services to support ongoing home maintenance
+          and improvement needs
+          <br></br> <br></br>
           With a commitment to quality, attention to detail, and customer satisfaction, Alpha Enterprises 
-          brings professionalism and a personal touch to every project—big or small.
+          brings professionalism and a personal touch to every project—big or small. 
       </p>
    </div>
    <img id='workArea' className='w-[35vw]' src={workArea} alt="" />
@@ -158,7 +170,7 @@ function App() {
      <h1 className='self-center'>
       Contact Us
     </h1>
-    <form className='flex flex-col justify-around w-[50vw] ml-[100px] ' action="https://formspree.io/f/xbdjdzpj" method='POST'>   
+    <form className='flex flex-col  justify-center w-[50vw] ml-[100px] ' action="https://formspree.io/f/xbdjdzpj" method='POST'>   
          
         <label id='firstLabel' htmlFor="firstName">First Name:  </label>
         <input id='firstName' name='firstName' type="text" required />
@@ -175,8 +187,8 @@ function App() {
         <textarea  name="body" id="formBody" minLength={20} maxLength={300} required>
           
         </textarea>
-        <button  id='submitBtn'>
-          Enter
+        <button className=''  id='submitBtn'>
+          Contact Us
         </button>
     </form>
     
