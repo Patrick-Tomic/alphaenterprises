@@ -59,15 +59,13 @@ function App() {
       image: ''
     }
   ]
-  const imgs = [lightingB, lightingC, Hero ]
-  let timer = 10000
+ 
+
   const [header,setHeader] = useState(services[0].header)
   const [description, setDescription] = useState(services[0].description)
-  const [heroImg, setImg] = useState(Hero)
+  const heroImg = Hero
       useEffect(() => {
-  const hero: any = document.getElementById('heroImg')
-  
-        let count = 0 
+
       /*   setInterval(() => {
           setImg(imgs[count])
           if(count === 0){
@@ -99,7 +97,7 @@ function App() {
       <li onClick={() => {
        setDescription(service.description)
        setHeader(service.header)
-       timer = 15000
+    
       }}>
         {service.service}
       </li>
