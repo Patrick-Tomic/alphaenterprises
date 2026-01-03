@@ -176,7 +176,8 @@ margin: 20px 20px;
     width: 50vw;
   }
   li{
-    font-size: 15px;
+    font-size: 18px;
+    width: 25vw;
   }
   #service{
     width: 60vw;
@@ -200,7 +201,5 @@ margin: 20px 20px;
   textarea{
   width: 50vw;
 }
- form{
-  margin-right: 50px;
- }
+ 
 }
