@@ -117,7 +117,7 @@ function App() {
         <a href="#services">Services</a>
         <a href="#contact">Contact Us</a>
     </nav>
-    <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-center min-h-[300vh] max-h-[150vh]'>
+    <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-start min-h-[300vh] max-h-[150vh]'>
     <div className='flex flex-col items-center justify-around'>
 
     
@@ -127,17 +127,21 @@ function App() {
       alt="Lighting Services in Tampa Area" />
 
 
-      <img className='w-[30vw] self-end mb-[5vh] rounded-[25px]' src={lightingB} alt="" />
-      <img src={lightingC} className='w-[30vw] mb-[5vh]  rounded-[25px]' alt="" />
-      <div className='flex  w-[50vw] justify-around'>
-        <img className='w-[20vw] rounded-[25px]' src={dirrtyGutter} alt="before of Dirty Gutters" />
-        <img className='w-[20vw] rounded-[25px]' src={cleanGutter} alt=" After of finished Gutters" />
+      <img id='lightingSrc' className='w-[30vw] self-end mb-[5vh] rounded-[25px]' src={lightingB} alt="" />
+      <img id='lightingSrc' src={lightingC} className='w-[30vw] mb-[5vh]  rounded-[25px]' alt="" />
+      <div id='gutterDiv' className='flex  w-[50vw] justify-around'>
+        <img id='gutterSrc'  className='w-[20vw] rounded-[25px]' src={dirrtyGutter} alt="before of Dirty Gutters" />
+        <img id='gutterSrc'  className='w-[20vw] rounded-[25px]' src={cleanGutter} alt=" After of finished Gutters" />
       </div>
         </div>
-      <div className='flex flex-col justify-around h-full items-center'>
+      <div className='flex flex-col justify-around  items-center h-[200vh]'>
       
-     <h1 id='heroTag' className='w-[25vw] justify-self-start text-[#FFFFFF]'>
+     <h1 id='heroTag' className='w-[25v] text-[#FFFFFF]'>
         Brighten, Protect, and Upgrade Your Home Across Tampa Bay
+        </h1>
+          
+     <h1 id='heroTag' className='w-[25vw]  text-[#FFFFFF]'>
+       Helping Tampa Bay Homes Look Better and Last Longer
         </h1>
          <a id='quoteTag' className='text-[#ffffff]' href="#">Get A Free Quote</a>
          </div>

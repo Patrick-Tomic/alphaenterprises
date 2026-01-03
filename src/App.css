@@ -136,7 +136,9 @@ margin: 20px 20px;
   background: rgba(27, 63, 115, 0.08);
 }
 @media(max-width:600px){
-  
+  #lightingSrc{
+    width: 50vw;
+  }
   #heroTag{
     font-size: 24px;
     width: 30vw;
@@ -145,6 +147,14 @@ margin: 20px 20px;
   }
   #quoteTag{
     font-size: 30px;
+  }
+  #gutterDiv{
+    flex-direction: column; 
+
+  }
+  #gutterSrc{
+    width: 40vw;
+    margin-bottom: 5vh;
   }
   #heroImg{
     width: 50vw;
@@ -174,12 +184,23 @@ margin: 20px 20px;
   #serviceHeader{
     width: 100%;
     margin-left: 4vw;
-    font-size: 30px;
+    font-size: 24px;
   }
   #serviceDesc{
-    font-size: 22px;
+    font-size: 18px;
+    padding: 50px 50px 50px 50px;
   }
   form{
     margin-left: 0;
   }
+
+  input{
+    width: 50vw;
+  }
+  textarea{
+  width: 50vw;
+}
+ form{
+  margin-right: 50px;
+ }
 }
