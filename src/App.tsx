@@ -59,22 +59,30 @@ function App() {
       image: ''
     }
   ]
-  const imgs = [Hero,lightingB, lightingC ]
+  const imgs = [lightingB, lightingC, Hero ]
   let timer = 10000
-   const [header,setHeader] = useState(services[0].header)
- const [description, setDescription] = useState(services[0].description)
- const [heroImg, setImg] = useState(lighting)
+  const [header,setHeader] = useState(services[0].header)
+  const [description, setDescription] = useState(services[0].description)
+  const [heroImg, setImg] = useState(Hero)
       useEffect(() => {
-
+  const hero: any = document.getElementById('heroImg')
+  
         let count = 0 
-        setInterval(() => {
-          if(count === 2) {
-            count = 0
-          }
+      /*   setInterval(() => {
           setImg(imgs[count])
+          if(count === 0){
+            hero.setAttribute('style','width:40vw; transition: all ease-in 0.5s;'
+          )
+          }
+          else if(count === 2) {
+            count = 0
+            hero.setAttribute('style','width:30vw; transition: all ease-in 0.5s;')
+            return
+          }
+         
           count++
 
-        }, 10000)
+        }, 10000) */
         /*let count = 1
          setInterval(() => {
           if(count > 7) {
@@ -109,13 +117,26 @@ function App() {
         <a href="#services">Services</a>
         <a href="#contact">Contact Us</a>
     </nav>
-    <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-center h-screen'>
+    <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-center min-h-[300vh] max-h-[150vh]'>
+    <div className='flex flex-col items-center justify-around'>
+
+    
       <img id='heroImg'
-      className='w-[30vw] rounded-[25px] '
+      className='w-[30vw] self-start mb-[5vh] rounded-[25px] '
       src={heroImg}
       alt="Lighting Services in Tampa Area" />
+
+
+      <img className='w-[30vw] self-end mb-[5vh] rounded-[25px]' src={lightingB} alt="" />
+      <img src={lightingC} className='w-[30vw] mb-[5vh]  rounded-[25px]' alt="" />
+      <div className='flex  w-[50vw] justify-around'>
+        <img className='w-[20vw] rounded-[25px]' src={dirrtyGutter} alt="before of Dirty Gutters" />
+        <img className='w-[20vw] rounded-[25px]' src={cleanGutter} alt=" After of finished Gutters" />
+      </div>
+        </div>
       <div className='flex flex-col justify-around h-full items-center'>
-     <h1 id='heroTag' className='w-[25vw] text-[#FFFFFF]'>
+      
+     <h1 id='heroTag' className='w-[25vw] justify-self-start text-[#FFFFFF]'>
         Brighten, Protect, and Upgrade Your Home Across Tampa Bay
         </h1>
          <a id='quoteTag' className='text-[#ffffff]' href="#">Get A Free Quote</a>
