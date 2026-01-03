@@ -115,7 +115,7 @@ function App() {
         <a href="#services">Services</a>
         <a href="#contact">Contact Us</a>
     </nav>
-    <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-start min-h-[300vh] max-h-[150vh]'>
+    <div id='HeroHome' className='bg-[#2866BA] p-[50px] flex justify-around items-start max-h-[300vh] min-h-[150vh]'>
     <div className='flex flex-col items-center justify-around'>
 
     
