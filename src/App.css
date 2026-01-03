@@ -135,6 +135,10 @@ margin: 20px 20px;
 #submitBtn:hover{
   background: rgba(27, 63, 115, 0.08);
 }
+ul{
+  flex-direction: column;
+
+}
 @media(max-width:600px){
   #lightingSrc{
     width: 50vw;
@@ -176,12 +180,29 @@ margin: 20px 20px;
     width: 50vw;
   }
   li{
-    font-size: 18px;
-    width: 25vw;
+    font-size: 20px;
+    min-width: 40vw;
   }
   #service{
-    width: 60vw;
+    width: 80vw;
   }
+  #serviceHead{
+    align-self: center;
+  }
+  #services{
+    flex-direction: column;
+  }
+                                        ul{
+                                          background: white;
+                                        flex-direction: row;
+                                          scroll-behavior: smooth;
+                                            width: 100vw;
+                                            align-items: center;
+                                            overflow:scroll;
+                                            scrollbar-width: auto;
+                                            max-height: 15vh;
+                                            box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+                                        }
   #serviceHeader{
     width: 100%;
     margin-left: 4vw;
@@ -189,7 +210,7 @@ margin: 20px 20px;
   }
   #serviceDesc{
     font-size: 18px;
-    padding: 50px 50px 50px 50px;
+   
   }
   form{
     margin-left: 0;

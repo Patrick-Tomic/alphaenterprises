@@ -179,10 +179,10 @@ function App() {
     </div>
     </div>
     <div className='flex flex-col'>
-       <h1>
+       <h1 id='serviceHead'>
       Our Services
     </h1>
-    <ul className=' h-[60vh] flex flex-col justify-around text-[20px]'>
+    <ul className=' h-[60vh] flex justify-around text-[20px]'>
       {listItems}
         </ul>
     </div>
