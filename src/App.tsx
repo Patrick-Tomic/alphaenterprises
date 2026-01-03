@@ -193,7 +193,7 @@ function App() {
      <h1 className='self-center'>
       Contact Us
     </h1>
-    <form className='flex flex-col  justify-center w-[50vw] ml-[100px] ' action="https://formspree.io/f/xbdjdzpj" method='POST'>   
+    <form className='flex flex-col  justify-center w-[50vw]  ' action="https://formspree.io/f/xbdjdzpj" method='POST'>   
          
         <label id='firstLabel' htmlFor="firstName">First Name:  </label>
         <input id='firstName' name='firstName' type="text" required />
